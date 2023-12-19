@@ -1,1 +1,32 @@
+将CSV的指标文件转换成向量并存在向量数据库
+
+langchain Index学习
+索引指构造文档的方法，以便大模型与其进行交互，index中涉及到如何在chain中接受查询和返回最相关文档，langchain目前接受的主要是向量数据库。
+在默认情况下langchain使用chroma作为向量数据库首先第一部安装chromadb
+
+pip install chromadb
+
+让llm通过问答形式回答文档中的内容通常包括四个步骤
+1.创建索引
+2.从该索引创建检索器
+3.创建一个问题回答链
+4.问问题
+
+from langchain.chains import RetrievalQA
+from langchain.llms import OpenAI
+from langchain.document_loaders import TextLoader
+loader = TextLoader('../state_of_the_union.txt', encoding='utf8')
+##利用现成的text文件##
+
+使用向量索引器创建一行索引
+from langchain.indexes import VectorstoreIndexCreator
+
+index = VectorstoreIndexCreator().from_loaders([loader])
+
+Running Chroma using direct local API.
+Using DuckDB in-memory for database. Data will be transient.
+
+query=“自然语言 查询”
+index.query_with_sources(query)
+##这里query with source 就是从资源中获取查询信息##
 
