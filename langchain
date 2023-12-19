@@ -1,3 +1,29 @@
+langchain 面向大模型开发框架 简单实现复杂功能AI应用 多组建封装（使用）
+A模块
+数据连接
+B模块
+LOAD EMBED
+C模块
+VECTOR STORE
+D模块
+Memory
+上下文对话 记忆
+
+fine tuning（改变）
+微调 接着别人的训练
+你想要训练的有什么，全参数finetune 小参数finetune 一个到两个
+lora算法微调小参数 当前垂直领域在大模型没有被覆盖到
+用loss判断 huggingface
+
+github.com/huggingface/peft
+
+PEFT小参数Ft
+
+
+
+
+
+
 将CSV的指标文件转换成向量并存在向量数据库
 
 langchain Index学习
